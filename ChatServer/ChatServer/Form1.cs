@@ -13,6 +13,7 @@ namespace ChatServer
 {
     public partial class Form1 : Form
     {
+
         Sevidor servidorActual;
         Email email;
         public Form1()
@@ -33,10 +34,6 @@ namespace ChatServer
             }
         }
 
-        private void botonCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
@@ -48,12 +45,26 @@ namespace ChatServer
 
         private void botonCerrar_Click_1(object sender, EventArgs e)
         {
-            new Thread(() =>
-            {
-
-            });
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = txtId.Text;
+            if (id == "") MessageBox.Show("No se aceptan datos vacios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else new Thread(()=>servidorActual.eliminarUsuario(id)).Start(); 
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

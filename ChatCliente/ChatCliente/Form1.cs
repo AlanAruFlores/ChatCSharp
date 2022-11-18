@@ -27,9 +27,9 @@ namespace ChatCliente
         private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
             string ip = txtIP.Text;
-            if (txtNombre.Text.Length > 8)
+            if (txtNombre.Text.Length > 8 || txtNombre.Text.Length<=0)
             {
-                MessageBox.Show("El nombre no puede tener mas de 8 caracteres");
+                MessageBox.Show("No se puede exceder de los 8 caracteres o no se acepta campo vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

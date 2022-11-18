@@ -77,6 +77,32 @@ namespace ChatServer
                 }
             } while (true);
         }
+
+        public void eliminarUsuario(string id)
+        {
+            int idConexion = int.Parse(id);
+            Connection usuarioEliminar = encontrarUsuario(idConexion);
+            if (usuarioEliminar == null) MessageBox.Show("No se encontro el usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                usuarioEliminar.escribir.WriteLine("close");
+                usuarioEliminar.escribir.Flush();
+                conexiones.Remove(usuarioEliminar);
+                ventanaPrincipal.actualizarRegistro();
+            }
+        }
+        private Connection encontrarUsuario(int id)
+        {
+            Connection valor = null;
+            foreach(Connection conn in conexiones)
+            {
+                if (conn.id == id) {
+                    valor = conn;
+                };
+            }
+            return valor;
+        }
+
         public List<Connection> getConexiones()
         {
             return this.conexiones;

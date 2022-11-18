@@ -22,7 +22,7 @@ namespace ChatCliente
             richChat.ReadOnly = true;
             new Thread(() =>
             {
-                Chat.cliente = new Cliente(nombre,this, this.richChat);
+                Chat.cliente = new Cliente(nombre,this, this.richChat,ip);
             }).Start();
             labelUsuario.Text = "Chat de " + nombre;
            
@@ -37,7 +37,12 @@ namespace ChatCliente
             }
         }
 
-        private void botonCerrar_Click_1(object sender, EventArgs e)
+        public void botonCerrarAlternativa()
+        {
+            this.Hide();
+        }
+
+        public void botonCerrar_Click_1(object sender, EventArgs e)
         {
             new Thread(Chat.cliente.Cerrar).Start();
             this.Hide();

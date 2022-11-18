@@ -48,6 +48,8 @@ namespace ChatServer
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.labelAdministrador = new System.Windows.Forms.Label();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnExpulsar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panelInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonCerrar)).BeginInit();
@@ -181,6 +183,8 @@ namespace ChatServer
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(120)))));
+            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.btnExpulsar);
             this.panel2.Controls.Add(this.bunifuFlatButton1);
             this.panel2.Location = new System.Drawing.Point(373, 340);
             this.panel2.Name = "panel2";
@@ -257,6 +261,27 @@ namespace ChatServer
             this.bunifuDragControl2.TargetControl = this.panelInicio;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // btnExpulsar
+            // 
+            this.btnExpulsar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(0)))), ((int)(((byte)(70)))));
+            this.btnExpulsar.Location = new System.Drawing.Point(178, 118);
+            this.btnExpulsar.Name = "btnExpulsar";
+            this.btnExpulsar.Size = new System.Drawing.Size(183, 46);
+            this.btnExpulsar.TabIndex = 16;
+            this.btnExpulsar.Text = "Expulsar";
+            this.btnExpulsar.UseVisualStyleBackColor = false;
+            this.btnExpulsar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(79, 119);
+            this.txtId.MaxLength = 2;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(63, 45);
+            this.txtId.TabIndex = 17;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,6 +307,7 @@ namespace ChatServer
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,6 +333,8 @@ namespace ChatServer
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+        private System.Windows.Forms.Button btnExpulsar;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 

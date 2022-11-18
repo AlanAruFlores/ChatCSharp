@@ -38,7 +38,6 @@ namespace ChatCliente
         {
             try
             {
-                rch.Text += msj + "\n";
                 flujoEscritura.WriteLine(msj);
                 flujoEscritura.Flush();
             }
@@ -54,7 +53,10 @@ namespace ChatCliente
             {
                 try
                 {
-                    chatSection.Text += flujoLectura.ReadLine() + "\n";
+                    string msj = flujoLectura.ReadLine();
+                    if (msj.Contains("close")) chatCliente.botonCerrarAlternativa();
+                    else chatSection.Text += msj + "\n";
+
                 }
                 catch (Exception ex)
                 {
