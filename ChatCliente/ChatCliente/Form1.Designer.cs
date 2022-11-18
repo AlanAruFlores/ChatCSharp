@@ -251,7 +251,7 @@ namespace ChatCliente
             // 
             // txtIP
             // 
-            this.txtIP.Location = new System.Drawing.Point(612, 504);
+            this.txtIP.Location = new System.Drawing.Point(590, 495);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(323, 22);
             this.txtIP.TabIndex = 29;

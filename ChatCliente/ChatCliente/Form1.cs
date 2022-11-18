@@ -35,7 +35,7 @@ namespace ChatCliente
             {
                 MessageBox.Show(txtNombre.Text);
                 if (ip != "") ip = "127.0.0.1";
-               
+ 
                 formChat = new Chat(txtNombre.Text,ip);
                 formChat.Show();
                 this.Hide();

@@ -19,6 +19,7 @@ namespace ChatCliente
         public NetworkStream flujo;
         public StreamWriter flujoEscritura;
         public StreamReader flujoLectura;
+
         public TcpClient usuario = new TcpClient();
         private static string nombre;
         private static string ip;

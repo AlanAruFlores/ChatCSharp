@@ -24,6 +24,9 @@ namespace ChatCliente
             {
                 Chat.cliente = new Cliente(nombre,this, this.richChat,ip);
             }).Start();
+
+            //Thread th = new Thread(Metodo)
+            //th.Start();
             labelUsuario.Text = "Chat de " + nombre;
            
         }
