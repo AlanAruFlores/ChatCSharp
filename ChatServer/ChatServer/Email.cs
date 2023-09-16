@@ -27,11 +27,11 @@ namespace ChatServer
             {
                 string rutaArchivo = @"C:\Users\Usuario\source\repos\ChatServer\ChatServer\bin\Debug\historial.txt";
                 MailMessage mensaje = new MailMessage();
-                mensaje.To.Add("alangta242@hotmail.com");
+                mensaje.To.Add("destinatario@hotmail.com");
                 mensaje.Subject = "Informacion del Chat";
                 mensaje.Body = enviarHTML();
                 mensaje.IsBodyHtml = true;
-                mensaje.From = new MailAddress("miprueba242@hotmail.com");
+                mensaje.From = new MailAddress("emisor@hotmail.com");
                 mensaje.Attachments.Add(new Attachment(rutaArchivo));
                 cliente.Send(mensaje);
                 MessageBox.Show("Mensaje Enviado");
