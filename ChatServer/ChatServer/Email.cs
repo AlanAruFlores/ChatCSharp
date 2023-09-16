@@ -18,7 +18,7 @@ namespace ChatServer
             cliente = new SmtpClient("smtp-mail.outlook.com", 587);
             cliente.UseDefaultCredentials = false;
             cliente.EnableSsl = true; //Seguridad
-            cliente.Credentials = new NetworkCredential("miprueba242@hotmail.com", "prueba242");
+            cliente.Credentials = new NetworkCredential("emisor@hotmail.com", "prueba242");
         }
 
         public void enviarMensaje()
